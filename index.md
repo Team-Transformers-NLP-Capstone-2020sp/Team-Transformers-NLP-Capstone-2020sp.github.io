@@ -1,9 +1,11 @@
-## Team Transformers
+# Team Transformers
 Brock Grassy, Dan Le, Kaushal M
 
-### Blog Post 1 4/7/2020
-Project Repo at:
+## Blog Post 1 4/7/2020
+### Project Repo at:
 https://github.com/Team-Transformers-NLP-Capstone-2020sp/Capstone-Project
+
+### Project Ideas
 
 Citizenship NLU:
 Experiment with or replicate relevant models
