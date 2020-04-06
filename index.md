@@ -4,7 +4,7 @@ Brock Grassy, Dan Le, Kaushal M
 
 ## Blog Post 1:
 
-Project Repo at [https://github.com/Team-Transformers-NLP-Capstone-2020sp/Capstone-Project]
+Project Repo at https://github.com/Team-Transformers-NLP-Capstone-2020sp/Capstone-Project
 ### Project Ideas:
 
 #### Citizenship NLU:
@@ -17,8 +17,8 @@ Project Repo at [https://github.com/Team-Transformers-NLP-Capstone-2020sp/Capsto
 
 #### Sarcasm:
 * Replication study
-* [https://towardsdatascience.com/sarcasm-detection-with-nlp-cbff1723f69a]
-* [https://github.com/anebz/papers#sarcasm-detection] (linked in article, summary of literature on sarcasm detection)
+* https://towardsdatascience.com/sarcasm-detection-with-nlp-cbff1723f69a
+* https://github.com/anebz/papers#sarcasm-detection (linked in article, summary of literature on sarcasm detection)
 * Examine existing models for sarcasm detection to get sense of state of the art performance
 * Find dataset with labeled texts for input into model
 * Determine which medium we want to examine and what context to provide (for instance if we’re looking at tweets, can we encode information about earlier replies in the chain, earlier user behaviors, and so on)
@@ -27,8 +27,8 @@ Project Repo at [https://github.com/Team-Transformers-NLP-Capstone-2020sp/Capsto
 
 #### Sentiment detection:
 * Replication study of existing models for detecting emotion/mood of sentences
-* [https://www.sciencedirect.com/science/article/abs/pii/S0169260715000620]
-* [https://www.researchgate.net/profile/Chetashri_Bhadane/publication/277564782_Sentiment_Analysis_Measuring_Opinions/links/55e5863508aebdc0f589e12e.pdf]
+* https://www.sciencedirect.com/science/article/abs/pii/S0169260715000620
+* https://www.researchgate.net/profile/Chetashri_Bhadane/publication/277564782_Sentiment_Analysis_Measuring_Opinions/links/55e5863508aebdc0f589e12e.pdf
 * Experiment with ways to capture sentiment in embeddings. Focus on detecting emotional states such as depression.
 * Find datasets for how to answer or respond based on mood. Stretch goal is depression chatbot
 * Train model on responding to emotional states (stretch goal)
