@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+## Team Transformers
+Brock Grassy, Dan Le, Kaushal M
 
-You can use the [editor on GitHub](https://github.com/Team-Transformers-NLP-Capstone-2020sp/Team-Transformers-NLP-Capstone-2020sp.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+### Blog Post 1 4/7/2020
+Project Repo at:
+https://github.com/Team-Transformers-NLP-Capstone-2020sp/Capstone-Project
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Citizenship NLU:
+Experiment with or replicate relevant models
+Look at starter code and existing applications
+Look at test and find user experiences for preparing for citizenship test
+Create or find data set with citizen test questions and answers
+Start with text input, then try to do voice to text. Add in language detection if time.
+Give advice on how to answer better
 
-### Markdown
+Sarcasm:
+Replication study
+https://towardsdatascience.com/sarcasm-detection-with-nlp-cbff1723f69a
+https://github.com/anebz/papers#sarcasm-detection (linked in article, summary of literature on sarcasm detection)
+Examine existing models for sarcasm detection to get sense of state of the art performance
+Find dataset with labeled texts for input into model
+Determine which medium we want to examine and what context to provide (for instance if we’re looking at tweets, can we encode information about earlier replies in the chain, earlier user behaviors, and so on)
+Train model that ideally classifies texts on whether they contain sarcasm or not, compare results to state of the art/existing results
+Stretch goals include finding ways to extend existing models to encode relevant information that may be encapsulated in other models/with other information. This is vaguely nebulous at the moment but would hopefully become more clear the more we work on the project as we determine what is lacking. Perhaps some sort of regimented error analysis could be useful for this purpose.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Sentiment detection:
+Replication study of existing models for detecting emotion/mood of sentences
+https://www.sciencedirect.com/science/article/abs/pii/S0169260715000620
+https://www.researchgate.net/profile/Chetashri_Bhadane/publication/277564782_Sentiment_Analysis_Measuring_Opinions/links/55e5863508aebdc0f589e12e.pdf
+Experiment with ways to capture sentiment in embeddings. Focus on detecting emotional states such as depression.
+Find datasets for how to answer or respond based on mood. Stretch goal is depression chatbot
+Train model on responding to emotional states (stretch goal)
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Team-Transformers-NLP-Capstone-2020sp/Team-Transformers-NLP-Capstone-2020sp.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Contact Info
