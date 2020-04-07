@@ -12,8 +12,9 @@ Project Repo at https://github.com/Team-Transformers-NLP-Capstone-2020sp/Capston
 * Look at starter code and existing applications
 * Look at test and find user experiences for preparing for citizenship test
 * Create or find data set with citizen test questions and answers
-* Start with text input, then try to do voice to text. Add in language detection if time.
+* Start with text input
 * Give advice on how to answer better
+* Stretch goal: Add support for a voice to text interface. Set up a 1-800 number that people can call and interact with, and add in language detection if there is time to allow us to direct callers to resources in their language if they don't know English.
 
 #### Sarcasm:
 * Replication study
