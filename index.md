@@ -1,6 +1,6 @@
 # Team Transformers
 
-Brock Grassy, Dan Le, Kaushal M
+Brock Grassy, Dan Le, Kaushal Mangipudi
 
 ## Blog Post 1:
 
