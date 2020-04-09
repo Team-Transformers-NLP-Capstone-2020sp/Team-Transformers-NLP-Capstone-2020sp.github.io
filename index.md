@@ -3,13 +3,17 @@
 Brock Grassy, Dan Le, Kaushal Mangipudi
 
 ## Blog Post 2:
+
 ### Citizenship NLU:
+
 #### Pros: 
 * Denise has already looked into the project so we would be able to receive support from  her. 
 * Could potentially be useful to a large population of users, and clearly has real-life stakes.
+
 #### Cons: 
 * Target users might have a hard time typing responses and using technology in general
 * Might not have time to implement speech to text
+
 #### Codebase: 
 * Denise starter code,  https://www.aclweb.org/anthology/R13-1006.pdf (Standford Named Entity Recognition)
 
@@ -17,12 +21,15 @@ Brock Grassy, Dan Le, Kaushal Mangipudi
 
 ### Refined Sentiment Analysis down to Psychotherapy Chatbot: 
 * Have a conversation with a user that serves a preliminary screening for depression
+
 #### Pros: 
 * Mental illness is not well studied in NLP and there are lots of unexplored paths we could take in this project. 
 * Mental health is a serious problem, and there are often systematic barriers for access to mental health care, so a project like this would have real stakes and could do a lot of good if it is successful.
+
 #### Cons: 
 * Lack of data (due to the sensitive nature of counseling conversations). 
 * Costs of failure are very high, as the chatbots will be interacting with sensitive and vulnerable people - saying the wrong thing could significantly worsen users’ mental health.
+
 #### Codebase: 
 * https://www.isca-speech.org/archive/Interspeech_2018/abstracts/2522.html (LTSM model)
 
