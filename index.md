@@ -6,9 +6,10 @@ Brock Grassy, Dan Le, Kaushal Mangipudi
 
 ### Minimal Action Plan:
 * Our final goal will be to produce a chatbot that will have a brief conversation with a user and determine what issues they are facing. To reach that point, we will stick to the following plan:
-Using the data provided the crisis line, train a LSTM model that can use helpline conversations to predict what issues the caller is facing
+* Reach out to Tim Althoff to touch base about his research and receive input about our project (as well as potential ethical concerns/questions)
+* Using the data provided the crisis line, train a LSTM model that can use helpline conversations to predict what issues the caller is facing
 * Do an analysis of our results to determine what questions are the most significant in predicting what issues callers are facing
-* Based off the analysis, hardcode sequences of questions that will get crucial data from the caller that will allow the initially trained model to predict the issues the caller is facing
+* Based off the analysis and existing medical questionnaires, train a model that uses the answers to previous questions to ask a question from a pool of hard-coded and predetermined questions that will best help determine what issue the caller is experiencing.
 
 ### Stretch Goals:
 * Develop a chatbot for depression detection
