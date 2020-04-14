@@ -2,6 +2,40 @@
 
 Brock Grassy, Dan Le, Kaushal Mangipudi
 
+## Blog Post 3:
+### minimal action plan:
+* Our final goal will be to produce a chatbot that will have a brief conversation with a user and determine what issues they are facing. To reach that point, we will stick to the following plan:
+Using the data provided the crisis line, train a LSTM model that can use helpline conversations to predict what issues the caller is facing
+* Do an analysis of our results to determine what questions are the most significant in predicting what issues callers are facing
+* Based off the analysis, hardcode sequences of questions that will get crucial data from the caller that will allow the initially trained model to predict the issues the caller is facing
+### stretch goals:
+* Develop a chatbot for depression detection
+* Move beyond diagnostics and attempt to apply therapeutic techniques
+* Train a more sophisticated model that will help ask good leading questions that will help predict what issues the callers are facing (potentially using GPT-2)
+### motivation:
+* Mental health is a major problem that needs to be addressed. We are making strides in improving accessibility to treatment and quality of care, but there simply isn’t enough manpower available to address the needs of everyone who needs mental health care. An automated preliminary screening for people dealing with mental health crises that can identify what problems people are dealing with would greatly reduce the workload help lines have, and will allow them to quickly point people to issue-specific resources they might need.
+### related work (literature survey):
+* Analysis of counseling conversations (Althoff): https://arxiv.org/pdf/1605.04462.pdf
+* Screening internet users for depression: https://www.sciencedirect.com/science/article/abs/pii/S0169260715000620
+* Depression in social media: https://www.aaai.org/ocs/index.php/ICWSM/ICWSM13/paper/view/6124/6351
+* Depression questionnaire: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6371338/
+* Indicators of depression: https://www.aclweb.org/anthology/W17-3101.pdf
+* Detecting depression in interviews: https://groups.csail.mit.edu/sls/publications/2018/Alhanai_Interspeech-2018.pdf
+### project objectives:
+* Be able to detect symptoms of depressions based on a user’s speech
+* Create a chatbot that will facilitate conversation and determine best course of action
+### proposed methodologies:
+* Train on Crisis Text Line data for issue differentiation using different embeddings and out of the box models.
+* Make a model for determining what questions to ask based on the conversation.
+* Create the chatbot that will dynamically ask questions and categorize crisis issues
+### available resources
+* Helpline transcripts: http://transcripts.cnn.com/TRANSCRIPTS/1503/31/csr.01.html
+* Crisis line text messages: https://www.crisistextline.org/data-philosophy/ 
+http://snap.stanford.edu/counseling/
+### evaluation plan
+For evaluating our first model that simply attempts to classify which issues a user is facing given a conversation, we can stick to standard metrics for classification quality (precision, recall, etc.)
+In Tim Althoff’s paper “Large-scale Analysis of Counseling Conversations: An Application of Natural Language Processing to Mental Health”, he provides various methodologies that are useful in quantifying the efficacy of various counseling sessions and conversations. We could potentially leverage these techniques when moving to our goal to ask questions to the user, as it’s important to verify that our bot is not causing any harm.
+
 ## Blog Post 2:
 
 ### Citizenship NLU:
