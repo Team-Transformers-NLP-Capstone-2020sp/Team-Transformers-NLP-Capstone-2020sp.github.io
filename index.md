@@ -2,6 +2,38 @@
 
 Brock Grassy, Dan Le, Kaushal Mangipudi
 
+## Blog Post 4:
+
+### New Project Plan: 
+* Create a chatbot that will help train counselors by emulating someone who is depressed. Stretch goal is to give the counselor an evaluation of how well they did and possibly how they can improve. Dataset is still the same.
+
+### Approach and Experiment Explanation:
+* For our strawman we will use twitter and or reddit data until DAIC becomes available.
+* We take tweets that both were tagged with a depression related hashtag (#depression, #mentalhealth, #anxiety, etc.) a negative sentiment and use an trigram model to emulate those tweets (https://github.com/AshwanthRamji/Depression-Sentiment-Analysis-with-Twitter-Data).
+* This will have similar output to our chatbot.
+* We acknowledge that this is not the best dataset to use. We have submitted requests for access to other datasets in addition to DAIC and are optimistic that at least one one of them will become available to us.
+
+### Example Results:
+* rt @alyciatyre : my heart goes out to those of us whose anxiety has gone from crippling to an accelerating vomit / shit / deathlike ever since …
+* depression , but i don't wish them upon anybody .
+* t 😂 😂 😋 by alot of using their minds 😂 😂
+* i have depression " just because i'm thinking of something more important to me feeling so tired and sick lately i haven't been able to go in @checkpointorg ' s kami dvorakova …
+* post 1am depression twitter https://t.co/ibmpn4kn8l
+* rt @kbelliard_ : nothing hurts more than depression , they're not thinking about life , you know what's really fun about bipolar disorder - anxiety is acting so badly rn lmao
+* rt @playstationau : 24 hours to go to a therapist every month and always have panic attacks and anxiety https://t.co/gmhp3ldode
+* my parents feel like there's something missing and that's why my depression ? https://t.co/tg3oxxndgl
+* talkin bout cancer 😩 😩 😩 😩 😩 😩 😩 😩 😩
+* i don't wanna talk until tomorrow 🎶
+
+### Evaluation Framework:
+* For now we will simply see if the chatbot sounds naturally depressed
+* When we get full counseling data we can also evaluate the chatbot’s responses to the user based on sentiment analysis.
+* We can also use an established sentiment dictionary to evaluate how negative the chatbot is
+
+### Evaluation of results:
+* Even with a simple n-gram model the tweets are pretty believable. There are a few nonsensical sections but overall most of them probably wouldn’t be distinguishable from regular tweets of this nature. The next step is to use reddit data which will be more grammatical so the n gram may not work as well.
+
+
 ## Blog Post 3:
 
 ### Minimal Action Plan:
