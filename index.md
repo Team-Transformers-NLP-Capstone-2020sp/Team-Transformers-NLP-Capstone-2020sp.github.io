@@ -2,6 +2,88 @@
 
 Brock Grassy, Dan Le, Kaushal Mangipudi
 
+## Blog Post 5:
+
+The two baselines we opted to use for our chatbot are an n-gram model and a LSTM model.:
+
+### N-gram:
+Our n-gram model is a simple model that generates text using a trigram model trained on what the patients said in the therapy session transcripts. We anticipated that a depression chatbot build using this model would perform relatively poorly because it would not be able to rely on what the person chatting with it says when formulating responses. Our prediction ended up matching our results. Here are some of the therapist statement / chatbot response pairs we ended up generating while testing the chatbot:
+
+Therapist: what are some things that make you really mad
+Chatbot: mhm
+
+Therapist: okay do you consider yourself an introvert
+Chatbot: i studied abroad in madrid spain when i was watching on the environment uh certain things like car issues sometimes
+
+Therapist: hm okay tell me more about that
+Chatbot: it's more prestige it just is really minor fortunately my i was having um more so i did the best decisions probably of recent would um be a particular time uh so but i made some bad experiences but for example he um derives a lot of congestion and um you know it's just dreams at least not for sure you know we had went to san francisco same custom and everything
+
+Therapist: awesome do you travel a lot
+Chatbot: yeah um jumping into a you know always circumstances in my life
+
+#### Error Analysis
+As can be seen, there are two main issues with the n-gram response. Firstly, there’s no way to determine the semantics present in the initial question/statement from the therapist, and the response has nothing to do with what the therapist said in the first place; in all cases the response is randomly generated through the same process based solely on initial n-gram frequencies. We also noticed in certain cases that the n-grams could result in arbitrarily long, incoherent concatenation of various responses. As such, the n-gram model doesn’t seem like the ideal model for our ending goal.
+
+### LSTM:
+Our second baseline approach is a more complex approach that relies on a LSTM model. The LSTM model uses an encoder decoder architecture that was trained on processed transcripts of therapy sessions between therapists and depressed patients. The model takes the input text that the therapist typed, encodes it using the encoder, and then uses the decoder to decode the encoded therapist text into client responses. We based this approach off an encoder/decoder model that translated French sentences into English sentences. We expected that this model would perform better than the n-gram model because it relies on the therapists’ input text in formulating responses. We found that our results were a bit better, as they made more sense in context, but they weren’t particularly good, as some of them were quite wacky. Because the encodings were done on a character to character basis, there is a lot of nonsense mixed in. Thus in our next iteration we plan on making it a word to word translation model by encoding the words through an embedding layer. That way we will get full words. Here are some examples:
+
+#### Small dataset results:
+Input sentence: awesome do you travel a lot
+Decoded sentence: no
+
+Input sentence: i'm sorry
+Decoded sentence: [laughter] it's alright
+
+Input sentence: how do you know them
+Decoded sentence: friendship
+
+Input sentence: cool how would your best friend describe you
+Decoded sentence: chocolate tall
+
+#### Large dataset results:
+Input sentence: what are some things that make you really mad
+Decoded sentence: there s the i gher ing whin s ae se in an s o  u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
+Input sentence: mhm
+Decoded sentence: yeah
+                                                                                                                                                                                                                                              
+Input sentence: why
+Decoded sentence: yeah
+
+Input sentence: do you feel that way often
+Decoded sentence: yeah                                                                                                            
+
+Input sentence: oh my gosh
+Decoded sentence: yeah
+
+Input sentence: that's so good to hear
+Decoded sentence: yeah  o m t i e r                                                                                                                                                                                                                                                                                                                                                                                                                                              
+
+Input sentence: hm okay tell me more about that
+Decoded sentence: um myye hhe witting s ie ghe wholllthet rereald m m mind an   w i                                                                                                                                                                                                                                                                                                                                                                                               
+
+Input sentence: hm
+Decoded sentence: yeah                                                                                                                                                                               
+
+Input sentence: wow
+Decoded sentence: yeah <laughter>
+  
+Input sentence: that's a long time
+Decoded sentence: yeah s m be i ie w a                                                                                                                                                                                                                                                                                                                               
+
+Input sentence: mhm
+Decoded sentence: yeah
+
+Input sentence: i'd love to hear about one of your trips
+Decoded sentence: mmey s i wet in a cases i whes i wathay aod reret in casesi go d alli ther i gue s i meas ald out me than  a  t                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+Input sentence: mhm
+Decoded sentence: yeah
+
+#### Error Analysis
+For the smaller data, the answers the bot gave were all logical, albeit short. For the larger one, the results were kind of nonsensical, as the responses. We based this approach off an encoder/decoder model that translated French sentences into English sentences. We expected that this model would perform better than the n-gram model because it relies on the therapists’ input text in formulating responses. We found that our results were a bit better, as they made more sense in context, but they weren’t particularly good, as some of the words weren’t really words. That being said, the sequences did resemble English somewhat and will probably be improved greatly once done with word embeddings.
+
+
 ## Blog Post 4:
 
 ### New Project Plan: 
