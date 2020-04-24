@@ -41,47 +41,77 @@ Input sentence: cool how would your best friend describe you
 Decoded sentence: chocolate tall
 
 #### Large dataset results:
-Input sentence: what are some things that make you really mad
-Decoded sentence: there s the i gher ing whin s ae se in an s o  u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+Input sentence: what are some things that make you really mad 
+Decoded sentence: there's nothing that really gets me really mad that i can think of the top of my head um
 
-Input sentence: mhm
-Decoded sentence: yeah
-                                                                                                                                                                                                                                              
-Input sentence: why
-Decoded sentence: yeah
+Input sentence: whatever comes to your mind
+Decoded sentence: um maybe when it comes to schools how they treat the children especially children of color maybe 
+
+Input sentence: okay do you consider yourself an introvert
+Decoded sentence: mm yes 
 
 Input sentence: do you feel that way often
-Decoded sentence: yeah                                                                                                            
+Decoded sentence: yeah
+
+Input sentence: okay when was the last time you argued with someone and what was it about 
+Decoded sentence: wow i hardly ever argue with somebody <laughter>
+
+Input sentence: <laughter> how did you feel in that moment
+Decoded sentence: mm yes 
+
+Input sentence: mhm can you tell me about that
+Decoded sentence: um trying new things seeing new views of the world um trying the different type of foods um seeing how the government is and how they run the things out there i guess
 
 Input sentence: oh my gosh
-Decoded sentence: yeah
+Decoded sentence: yeah oh my sister i guess my sister that was about a month ago
+
+Input sentence: yeah that sucks
+Decoded sentence: yeah so but i mean we're fine now so that's good
 
 Input sentence: that's so good to hear
-Decoded sentence: yeah  o m t i e r                                                                                                                                                                                                                                                                                                                                                                                                                                              
+Decoded sentence: yeah
+
+Input sentence: what advice would you give yourself ten or twenty years ago
+Decoded sentence: to not  believe people so easily so gullible to not be so gullible
 
 Input sentence: hm okay tell me more about that
-Decoded sentence: um myye hhe witting s ie ghe wholllthet rereald m m mind an   w i                                                                                                                                                                                                                                                                                                                                                                                               
+Decoded sentence: i guess i've been hearing that lately how i believe anybody anything that somebody says without really thinking about it or without having them prove it so i guess you could say i let i made a lot of mistakes i don't wanna say i regretted it because i'm glad i went through it while i was younger than me getting older and going through the same situations so um yeah i believe people too easily and i give people too much chances  so
 
-Input sentence: hm
-Decoded sentence: yeah                                                                                                                                                                               
+Input sentence: what's one of your most memorable experiences
+Decoded sentence: when i went on a cruise which was a happy experience when i went on a cruise to mexico with my family um  when i was sixteen about six years ago
 
-Input sentence: wow
+Input sentence: wow 
 Decoded sentence: yeah <laughter>
-  
+
 Input sentence: that's a long time
-Decoded sentence: yeah s m be i ie w a                                                                                                                                                                                                                                                                                                                               
+Decoded sentence: yeah
+
+Input sentence: <laughter> do you travel a lot
+Decoded sentence: um maybe when it comes to schools how they treat the children especially children of color maybe 
+
+Input sentence: what do you enjoy about traveling
+Decoded sentence: um trying new things seeing new views of the world um trying the different type of foods um seeing how the government is and how they run the things out there i guess
 
 Input sentence: mhm
-Decoded sentence: yeah
+Decoded sentence: yeah <laughter>
 
 Input sentence: i'd love to hear about one of your trips
-Decoded sentence: mmey s i wet in a cases i whes i wathay aod reret in casesi go d alli ther i gue s i meas ald out me than  a  t                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+Decoded sentence: uh i felt very betrayed and belittled because she's my little sister and she shouldn't be disrespecting me in any type of way because i'm an adult so yeah i was not feeling the situation at all
 
-Input sentence: mhm
-Decoded sentence: yeah
+Input sentence: really
+Decoded sentence: yeah so but i mean we're fine now so that's good
+
+Input sentence: how easy is it for you to get a good night's sleep
+Decoded sentence: o mean the sirees itn was  oua fhey ing ee the tof secting she dolly the rorue the it leon the roug the siseesi tean wall  oh iner ato th tie g me thavg so ther i gues sof beon beas ind sot rually think ioguat it weo i watuso meang iod sot ler iergend ioke tout th m si guet it' so tuat y o calibedo s t beli gesped ond that in whe too fatot oo ghe di gumes peot lit sas ildont tok on the aho guttitnot area gu
+
+Input sentence: awesome okay i think i've asked everything i need to
+Decoded sentence: when i went on a cruise which was a happy experience when i went on a cruise to mexico with my family um  when i was sixteen about six years ago
+
+Input sentence: thanks for sharing your thoughts with me 
+Decoded sentence: uh i felt very betrayed and belittled because she's my little sister and she shouldn't be disrespecting me in any type of way because i'm an adult so yeah i was not feeling the situation at all
 
 #### Error Analysis
-For the smaller data, the answers the bot gave were all logical, albeit short. For the larger one, the results were kind of nonsensical, as the responses. We based this approach off an encoder/decoder model that translated French sentences into English sentences. We expected that this model would perform better than the n-gram model because it relies on the therapists’ input text in formulating responses. We found that our results were a bit better, as they made more sense in context, but they weren’t particularly good, as some of the words weren’t really words. That being said, the sequences did resemble English somewhat and will probably be improved greatly once done with word embeddings.
+For the smaller data, the answers the bot gave were all logical, albeit short. For the larger one, the results could be a little nonsensicals. We based this approach off an encoder/decoder model that translated French sentences into English sentences. We expected that this model would perform better than the n-gram model because it relies on the therapists’ input text in formulating responses. We found that our results were a bit better, as they made more sense in context, but they weren’t particularly good, as some of the words weren’t really words. That being said, the sequences did resemble English somewhat and will probably be improved greatly once done with word embeddings.
 
 
 ## Blog Post 4:
