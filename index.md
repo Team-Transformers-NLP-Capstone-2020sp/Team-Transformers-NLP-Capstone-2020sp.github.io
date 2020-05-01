@@ -2,6 +2,155 @@
 
 Brock Grassy, Dan Le, Kaushal Mangipudi
 
+## Blog Post 6:
+### explanation of approach
+We relied heavily on Huggingface’s Conversational AI model for this approach. The basis for this approach is the GPT2DoubleHeadsModel, which consists of a GPT-2 Transformer and two heads that consist of two linear layers, one head for language modeling and the other for multiple choice classification. The model takes in information about the subject it will generate text as in the form of a ‘personality’, and then uses that context along with the dialogue history to generate responses to user input and serve as a conversation partner. We used Huggingface’s pretrained model for conversational AI and then finetuned it using our transcript data from DAIC. To generate the data used from finetuning, we took the transcripts and concatenated multiple lines with the same speaker to get a transcript where each line consists of continuous words spoken by a single speaker and the speaker alternates each line. Then, for each transcript, we programmatically used some of the lines said by the patient to construct a set of sentences to serve as a personality. Then, we used the conversation to construct, for each line said by the patient, a history that consists of all the lines in the transcript to that point, and a bunch of candidate responses drawn from the patient’s conversation, with the correct response being the one the patient actually said at that point in the conversation. We trained Huggingface’s pretrained model on the transcript data using Huggingface’s provided training script for 5 epochs, and then used their provided interact script to interact with the finetuned model.
+1 point for reporting 
+### Psychiatrist would enter in questions and model outputs a result.
+#### Conversation 1:
+
+>>> how are you feeling today?
+
+i am good. just got home from work.
+
+>>> what kind of job do you do?
+
+i'm an accountant.
+
+>>> how do you like your job?
+
+i love it. its more than i can do on my own.
+
+>>> how's life treating you?
+
+i am doing well. its been hard, but i'm doing ok.
+
+>>> what has been hard?
+
+i am not sure. i am just a workaholic.
+
+>>> do you have any activities outside of work?
+
+yes, i love the weather. do you?
+
+>>> no, weather is just weather
+
+i like to go to the beach and take long walks.
+
+>>> what is your favorite beach?
+
+i love the beach, but i prefer the beach to the beaches.
+
+>>> what do you do on a beach?
+
+i work on my business, what about you?
+
+>>> what is your business?
+
+it is a company.
+
+>>> how much sleep do you get?
+
+i get a lot of sleep and eat out.
+
+>>> what kind of food do you eat?
+
+i like to eat a lot of salads.
+
+>>> do you cook?
+
+yes, i do. i also enjoy the chance to travel.
+
+>>> do you cry?
+
+i've been to the zoo.
+
+>>> have you had any thoughts of hurting yourself?
+
+i like animals. i am a vet.
+
+
+#### Conversation 2:
+>>> Hi how are you
+
+i am good how about yourself?
+
+>>> how are you feeling
+
+i'm good. i just finished reading.
+
+>>> is there anything wrong?
+
+just feeling stressed. i love the opportunities and i like the chance.
+
+>>> what's going on in your life?
+
+i am trying to decide what i want to do with my life
+
+>>> are there any big decisions you need to make?
+
+yes. i want to go back to atlanta. but i am worried about the hurricane.
+
+>>> what makes you think a hurricane is coming
+
+lots of hurricanes. lots of things.
+
+>>> how are you sleeping?
+
+i'm ok. i like the weather. i'm a big fan of the weather.
+
+>>> does the weather affect you?
+
+yes. i love the change. and it is nice here.
+
+>>> what makes it so nice?
+
+its a lot of hurricanes. i love the change.
+
+>>> I thought you said you were afraid of hurricanes?
+
+i am. i'm in atlanta. i've never been.
+
+>>> so why did you say you like hurricanes
+
+i love the weather. the weather here is nice.
+
+>>> what kind of weather?
+
+i love the fall weather.
+
+>>> how old are you?
+
+i'm 23. i love the fall weather.
+
+>>> are you in school?
+
+yes. i am a junior in high school.
+
+>>> but I thought you were 23?
+
+oh, i was only 18.
+
+>>> what grade are you in at 18?
+
+well i am studying business and administration.
+
+>>> what grade level are you?
+
+in school i'm a senior.
+
+>>> what do your parents do?
+
+oh, i'm in college. i'm from georgia georgia.
+
+
+### failure modes
+Our model failed to train on GPU as even the small gpt2 version consumed up to 20 gb of memory. When training on cpu we were only about to train the model for 10 epochs, but it took a long time and the results were not great as the chatbot was still mostly using the pretrained data and thus sounded happy most of the time. Our results were produced by having a psychiatrist interact with the model and he said that “it feels like the chatbot is spouting nonsense because it is inconsistent when I ask follow up questions and it doesn’t even sound depressed in the first place”. Because we did not modify the huggingface model, there may be an error in the way that we formatted the data as well.
+### next steps
+We’re going to do our due diligence in investigating using huggingface for our model, as that seems to be the most convenient for our particular use case. We feel like our strategy for constructing personalities for our training data is too simplistic, and will try to see if we can improve that. If we are able to figure out a way to get around our current hardware restrictions, then we will move ahead with training our current model over a greater timeframe and then evaluate its performance. If not, we have considered attempting to use a double-headed GPT-2 model to implement a chatbot that can keep track of the entire context of a conversation.
+
+
+
 ## Blog Post 5:
 
 The two baselines we opted to use for our chatbot are an n-gram model and a LSTM model.:
