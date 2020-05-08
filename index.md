@@ -2,6 +2,129 @@
 
 Brock Grassy, Dan Le, Kaushal Mangipudi
 
+## Blog Post 7:
+
+### advancing solution attempt #1
+For our initial solution, we were unable to train the Huggingface model on our GPU without running into memory errors- training it for 10 epochs on CPU took an incredibly long time. Since the submission of our last blog post, we were able to figure out how to get the model to run on the lab-provided GPUs. The initial results after running on a greater number of epochs were promising, as the agent’s responses tended to be more coherent as a whole. However, we found that it was still lacking overall consistency across responses. For instance, the agent would provide contradictory messaging when asked the same question at different points within the same conversation. We attributed this behavior to problems with our automatically generated “personas”. 
+To provide another summary of what our model’s input looks like, there are basically three pieces of information required for a conversation: the messages sent during the conversation (utterances), the true response and false candidate responses for the agent at each point in the conversation (candidates), and a series of sentences describing the agent’s “persona”. Our initial strategy for extracting personas involved automatically finding sentences that start with “I” or “my” and using those directly. However, that gave subpar results, as rarely people would say sentences that describe their “personality” in the simple, distilled way we wanted them to. As such, we turned to manual labeling and creation of personas for each person. Sample sentences that are part of these personas include “I am from new york”, “I moved to l_a for business”, and so on. 
+We were able to label 20 of the conversations fully and used those in our sample model. Initial results from this model proved to be promising, as the model did a good job encoding the individual personalities. Results are naturally still not perfect, but they are greatly improved over our last ones. One issue that consistently came up, for example, is that the agents don’t sound as “depressed” as we might expect them to do. A further exploration of this trend and what can be done to improve results on this front is included in the later sections of this post.
+1 point for describing additional experiments run
+We tried training on different pretrained models, such as huggingface’s finetuned gpt model, pretrained gpt2 small, and pretrained gpt. The finetuned gpt model caused some GPU errors, but later we were able to remove the validation metrics and run gpt2 without errors. In addition we tried processing the transcripts differently to include less candidates for responses to conversation.  It didn’t affect our results because the “true” response we mostly what the model was trained on. In addition, we tried assigning every conversation the same personality text such as “I am depressed”. It improved the coherence of the responses but was less consistent in its answers. We also adjusted the number of training epochs
+
+
+### additional error analysis 
+#### Conversation log of chatbot with psychiatrist:
+##### Selected personality: i'm from colorado.i'm a paralegal.i love l_a for all the opportunities.i want to be an attorney to help people.i don't like it when people aren't empathetic.i am a single mother.i'm proud of my daughter because she just graduated from u_c_l_a.i'm pretty stressed.i was harassed during a workplace dispute and now have p_t_s_d.i love travelling.
+
+>>> how is your day going?
+
+uh it's good.
+
+>>> what made it a good day?
+
+uh i was just told that my daughter graduated from u_c_l_a
+
+>>> what is she studying ?
+
+um she's a paralegal.
+
+>>> how are you sleeping?
+
+uh paralegal.
+
+>>> how many hours of sleep do you get?
+
+oh two a day.
+
+>>> are you eating well?
+
+no.
+
+>>> why not?
+
+oh well i'm a paralegal.
+
+>>> is your job stressful?
+
+uh yeah i am.
+
+>>> what makes it stressful?
+
+uh when people don't give you the right kind of work environment.
+
+>>> what is your work environment like?
+
+uh i'm pretty stressed out and um very stressed out.
+
+>>> is there anyone stressing you?
+
+no.
+
+>>> is the nature of the work stressful?
+
+no.
+
+>>> is it the quantity of work?
+
+not the.
+
+>>> what makes it stressful?
+
+um.
+
+>>> what makes the work stressful?
+
+uh that it's easy to disregard and just disregard you're actually doing something that's important that you
+
+>>> how is work stressful?
+
+uh it's like you're in a situation where you're trying to argue with a wall of people
+
+>>> are you arguing with a lot of people at work?
+
+yes i am.
+>>> why are the workers arguing with you?
+
+because you're trying to get away from them.
+
+>>> why do the workers want you away from you?
+
+because you're trying to get away from them.
+
+>>> have you been in trouble with work?
+
+no.
+>>> did you tell your boss what is happening at work?
+
+oh no <laughter> no i'm sorry.
+  
+>>> Why wouldn't you tell your boss your work problem?
+
+oh uh what do you mean.
+
+>>> do you like your coworkers?
+
+uh they're rude sometimes but they're not.
+
+>>> what did they say to you that was rude?
+
+uh well i didn't mean to disrespect them.
+
+#### Psychiatrist feedback:
+"what makes it stressful? uh when people don't give you the right kind of work environment."
+Were very good lines. Everything else was bad, and most of the personalities (conversations not listed here) were not depressed at all. Because therapy relies on follow up questions the history of the conversation needs to have more of an impact.
+
+
+We ran the nltk sentiment analysis on the chatbot’s responses from the conversation and it output a compound score of 0.1328 which is somewhat positive leaning on the neutral side. Negative compound scores indicate negative sentiment while positive scores indicate positive sentiment. Overall our chatbot has improved its capabilities but there are many more improvements that need to be made. One thing that caused the chatbot to be inconsistent was that our handwritten prompts for the chatbot were too complex. It used the information in the wrong context, and completely ignored certain sentences. It is already hard for current chatbots to maintain conversation history so our problems with it may be a result of that, or made worse with the sparse amount of data that we are working with.
+
+### sketch of next action plan
+We haven’t finished annotating all the 175 transcripts yet, so we’ll try to get that finished ASAP. We think some of the issues we have might be caused by a lack of data, so finishing this and increasing the pool of annotated data should hopefully help with that.
+Another thing we are considering is improving our methodology for providing candidate options for the bot to say. Our current approach is to provide all the things said by a depressed person in a conversation as candidates for each sentence, which doesn’t help train the model to give answers to questions that are specific to their persona. A lot of the questions asked by the bot are similar, so one idea is to create ‘pools’ of answers to specific questions to use as candidates. For example, one question commonly asked in the transcripts is ‘what caused you to seek help?’ One person who suffered a specific trauma in the past migchaht point to that particular incident, while someone who is just upset with their life in general might have a different response. Including both of their responses would help the model’s responses to questions like these more sensitive to what’s in the personality, which should help in making the model more self-consistent.
+Another, alternative path we could take that we’re looking into right now is to create knobs that could tune how the model sounds, e.g. how cooperative the model is, how depressed the model should act, etc. This is an interesting idea that could help psychiatrists get practice in dealing with specific types of patients and get extra training with types of patients that they might find more difficult to deal with. To this, we’d need to further annotate our data on axises like cooperativeness/hostility and how depressed the patients are in the transcripts, but we don’t necessarily have to do this by hand - we could use existing tools like sentiment analysis to do this automatically. If we decide to pursue this line of inquiry further, we’ll first try automatically labeling the data using sentiment analysis and see if the annotations are of sufficiently high quality to use in training. If they are, we’ll try to use it training. We currently aren’t super optimistic about the feasibility of this approach, however, as we feel like the relatively small amount of data we have at our disposal means that further subdividing the data based off of factors like severity of depression might make the small buckets of data harder to effectively train on.
+
+A final idea we’re considering that could help address the data issue is to switch from GPT-2 to GPT. This might seem counterproductive, but in addition to the pretrained GPT-2 and GPT models, Huggingface has a publically available finetuned chatbot model based off of GPT that seems to perform fairly well. If, instead of starting with the pretrained GPT model and finetuning it with the transcript data, we start with the already finetuned GPT model from Huggingface, and then finetune further using the transcript data, we might be able to futher improve our results. We aren’t sure if this seems like a reasonable (or ethical - if we do this, we will definitely fully credit Huggingface, but we’re not sure if this would constitute some faux pas regardless) thing to do, and would welcome feedback on this potential next step.
+
+
 ## Blog Post 6:
 ### explanation of approach
 We relied heavily on Huggingface’s Conversational AI model for this approach. The basis for this approach is the GPT2DoubleHeadsModel, which consists of a GPT-2 Transformer and two heads that consist of two linear layers, one head for language modeling and the other for multiple choice classification. The model takes in information about the subject it will generate text as in the form of a ‘personality’, and then uses that context along with the dialogue history to generate responses to user input and serve as a conversation partner. We used Huggingface’s pretrained model for conversational AI and then finetuned it using our transcript data from DAIC. To generate the data used from finetuning, we took the transcripts and concatenated multiple lines with the same speaker to get a transcript where each line consists of continuous words spoken by a single speaker and the speaker alternates each line. Then, for each transcript, we programmatically used some of the lines said by the patient to construct a set of sentences to serve as a personality. Then, we used the conversation to construct, for each line said by the patient, a history that consists of all the lines in the transcript to that point, and a bunch of candidate responses drawn from the patient’s conversation, with the correct response being the one the patient actually said at that point in the conversation. We trained Huggingface’s pretrained model on the transcript data using Huggingface’s provided training script for 5 epochs, and then used their provided interact script to interact with the finetuned model.
