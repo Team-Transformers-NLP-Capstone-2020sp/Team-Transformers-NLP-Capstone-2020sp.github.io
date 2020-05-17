@@ -81,7 +81,7 @@ This bot was inconsistent with his moods but gave a string of answers for school
 
 sentiment:
 
->>> <negative>
+>>> negative
   
 no.
 
@@ -89,7 +89,7 @@ no.
 
 sentiment:
 
->>> <positive>
+>>> positive
   
 yes.
 
@@ -97,7 +97,7 @@ yes.
 
 sentiment:
 
->>> <positive>
+>>> positive
   
 yes.
 
@@ -105,7 +105,7 @@ yes.
 
 sentiment:
 
->>> <neutral>
+>>> neutral
   
 <sniffle> <sniffle> <sigh> <sniffle> <
   
@@ -113,7 +113,7 @@ sentiment:
 
 sentiment:
 
->>> <positive>
+>>> positive
   
 yes.
 
@@ -121,7 +121,7 @@ yes.
 
 sentiment:
 
->>> <positive>
+>>> positive
   
 yes.
 
@@ -129,7 +129,7 @@ yes.
 
 sentiment:
 
->>> <positive>
+>>> positive
   
 yes.
 
@@ -137,7 +137,7 @@ yes.
 
 sentiment:
 
->>> <negative>
+>>> negative
   
 i'm feeling really bad but i'm okay.
 
@@ -145,7 +145,7 @@ i'm feeling really bad but i'm okay.
 
 sentiment:
 
->>> <neutral>
+>>> neutral
   
 <laughter> i don't know.
   
@@ -153,7 +153,7 @@ sentiment:
 
 sentiment:
 
->>> <positive>
+>>> positive
   
 yes.
 
@@ -161,7 +161,7 @@ yes.
 
 sentiment:
 
->>> <neutral>
+>>> neutral
   
 i'm nervous.
 
@@ -169,7 +169,7 @@ i'm nervous.
 
 sentiment:
 
->>> <positive>
+>>> positive
   
 i'm anxious.
 
@@ -177,7 +177,7 @@ i'm anxious.
 
 sentiment:
 
->>> <neutral>
+>>> neutral
   
 i'm not sure i'm feeling really bad.
 
@@ -185,7 +185,7 @@ i'm not sure i'm feeling really bad.
 
 sentiment:
 
->>> <negative>
+>>> negative
   
 no.
 
@@ -193,7 +193,7 @@ no.
 
 sentiment:
 
->>> <negative>
+>>> negative
   
 no.
 
@@ -201,7 +201,7 @@ no.
 
 sentiment:
 
->>> <neutral>
+>>> neutral
   
 no.
 
@@ -209,7 +209,7 @@ no.
 
 sentiment:
 
->>> <negative>
+>>> negative
   
 no.
 
@@ -217,7 +217,7 @@ no.
 
 sentiment:
 
->>> <negative>
+>>> negative
   
 no.
 
@@ -225,7 +225,7 @@ no.
 
 sentiment:
 
->>> <neutral>
+>>> neutral
   
 i don't know.
 
@@ -233,7 +233,7 @@ i don't know.
 
 sentiment:
 
->>> <negative>
+>>> negative
   
 no.
 
