@@ -107,7 +107,7 @@ sentiment:
 
 >>> neutral
   
-<sniffle> <sniffle> <sigh> <sniffle> <
+sniffle sniffle sigh sniffle
   
 >>> do you want help?
 
