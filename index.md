@@ -152,7 +152,7 @@ sentiment:
 
 >>> neutral
   
-<laughter> i don't know.
+(laughter) i don't know.
   
 >>> are you anxious?
 
