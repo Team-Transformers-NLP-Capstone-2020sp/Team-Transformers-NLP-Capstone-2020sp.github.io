@@ -12,39 +12,72 @@ One of the hyperparameters passed into the model is the “conversation history�
 
 #### Conversation 1: (Conversation sentiment is negative)
 >>> are you sad?
+
 yes.
+
 >>> what is making you feel sad?
+
 um my depression.
+
 >>> how long have you been depressed?
+
 um i've been depressed for about six months now.
+
 >>> why are you depressed?
+
 um just feel bad for myself.
+
 >>> why?
+
 because i don't have health insurance.
+
 >>> do you have a job
+
 uh just so i can afford it.
+
 >>> do you have a job
+
 um i do.
+
 >>> what kind of work do you do?
+
 cooking.
+
 >>> what is your job?
+
 i cook.
+
 >>> do you cook at a restaurant?
+
 yes i do.
+
 >>> do you enjoy your job
+
 i don't.
+
 >>> what don't you like about the job
+
 um the fact that i'm unemployed so i'm not able to afford to be a cook.
+
 >>> what job would make you happy?
+
 i don't know i would love to be a chef.
 
+
 #### Conversation 2: (Conversation sentiment is negative)
+
 >>> are you sad? 
+
 yes. 
+
 >>> why are you sad? 
+
 i'm upset about not getting married.
+
  >>> why do you feel the need to get married? 
+ 
 i'm upset about not having children.
+
 
 #### Expert Feedback:
 “This is close to a preliminary psychiatry session. It's not bad, especially if it is for casual call line therapy.”
