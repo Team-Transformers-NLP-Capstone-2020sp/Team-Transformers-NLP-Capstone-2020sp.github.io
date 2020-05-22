@@ -11,70 +11,70 @@ Brock Grassy, Dan Le, Kaushal Mangipudi
 One of the hyperparameters passed into the model is the “conversation history” hyperparameter, which controls the number of previous messages in the conversation that the model has access to. Our previous experiments used 2 as the default number for this hyperparameter.  We ran with a conversation history hyperparameter of 4 instead of 2, as it was necessary to do so in order to include the new sentiment information that we were encoding. We proceeded to get psychiatrist input on the model with the new sentiment knobs trained on these hyperparameters:
 
 #### Conversation 1: (Conversation sentiment is negative)
->>> are you sad?
+> are you sad?
 
 yes.
 
->>> what is making you feel sad?
+> what is making you feel sad?
 
 um my depression.
 
->>> how long have you been depressed?
+> how long have you been depressed?
 
 um i've been depressed for about six months now.
 
->>> why are you depressed?
+> why are you depressed?
 
 um just feel bad for myself.
 
->>> why?
+> why?
 
 because i don't have health insurance.
 
->>> do you have a job
+> do you have a job
 
 uh just so i can afford it.
 
->>> do you have a job
+> do you have a job
 
 um i do.
 
->>> what kind of work do you do?
+> what kind of work do you do?
 
 cooking.
 
->>> what is your job?
+> what is your job?
 
 i cook.
 
->>> do you cook at a restaurant?
+> do you cook at a restaurant?
 
 yes i do.
 
->>> do you enjoy your job
+> do you enjoy your job
 
 i don't.
 
->>> what don't you like about the job
+> what don't you like about the job
 
 um the fact that i'm unemployed so i'm not able to afford to be a cook.
 
->>> what job would make you happy?
+> what job would make you happy?
 
 i don't know i would love to be a chef.
 
 
 #### Conversation 2: (Conversation sentiment is negative)
 
->>> are you sad? 
+> are you sad? 
 
 yes. 
 
->>> why are you sad? 
+> why are you sad? 
 
 i'm upset about not getting married.
 
- >>> why do you feel the need to get married? 
+ > why do you feel the need to get married? 
  
 i'm upset about not having children.
 
