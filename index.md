@@ -86,25 +86,45 @@ i'm upset about not having children.
 ### additional error analysis:
 
 One thing we noticed is that the model performed a lot better when we tried to structure the questions we asked it to mimic the question structure of the questions asked by the therapist in the transcripts we trained the model on, like in this conversation:
->>> hi, how are you?
+
+> hi, how are you?
+
 pretty good.
->>> where are you from?
+
+> where are you from?
+
 mhm.
->>> are you sad?
+
+> are you sad?
+
 yes.
->>> what do you like to do?
+
+> what do you like to do?
+
 um i like to walk.
->>> where do you work?
+
+> where do you work?
+
 mhm.
->>> where do you work?
+
+> where do you work?
+
 uh in the office.
->>> what did you study?
+
+> what did you study?
+
 business.
->>> why are you sad?
+
+> why are you sad?
+
 i don't know.
->>> would you go to therapy?
+
+> would you go to therapy?
+
 it would be too expensive.
->>> what is the situation?
+
+> what is the situation?
+
 uh just depressed.
 
 In this transcript, the chatbot was able to accurately answer the questions we asked it without us having to repeat the questions. This suggests that the model struggles to generalize beyond the training data, which makes sense given our difficulty in acquiring more transcripts. According to our expert, licensed therapists and psychiatrists will ask open ended questions, and if something like depression comes up they will follow up on the specific situation. It is difficult to gain information about “why” the chatbot is sad or “how” it lost its job. Because the therapist in our training data isn’t specific when asking questions, responses are more conversational and don’t allow for a lot of depth. Overall, the chatbot performed a little bit better than last week as it now can at the very least make small talk with a psychiatrist.
