@@ -2,6 +2,85 @@
 
 Brock Grassy, Dan Le, Kaushal Mangipudi
 
+## Blog Post 9:
+
+### advancing solution attempt #2
+
+### results:
+
+One of the hyperparameters passed into the model is the “conversation history” hyperparameter, which controls the number of previous messages in the conversation that the model has access to. Our previous experiments used 2 as the default number for this hyperparameter.  We ran with a conversation history hyperparameter of 4 instead of 2, as it was necessary to do so in order to include the new sentiment information that we were encoding. We proceeded to get psychiatrist input on the model with the new sentiment knobs trained on these hyperparameters:
+
+#### Conversation 1: (Conversation sentiment is negative)
+>>> are you sad?
+yes.
+>>> what is making you feel sad?
+um my depression.
+>>> how long have you been depressed?
+um i've been depressed for about six months now.
+>>> why are you depressed?
+um just feel bad for myself.
+>>> why?
+because i don't have health insurance.
+>>> do you have a job
+uh just so i can afford it.
+>>> do you have a job
+um i do.
+>>> what kind of work do you do?
+cooking.
+>>> what is your job?
+i cook.
+>>> do you cook at a restaurant?
+yes i do.
+>>> do you enjoy your job
+i don't.
+>>> what don't you like about the job
+um the fact that i'm unemployed so i'm not able to afford to be a cook.
+>>> what job would make you happy?
+i don't know i would love to be a chef.
+
+#### Conversation 2: (Conversation sentiment is negative)
+>>> are you sad? 
+yes. 
+>>> why are you sad? 
+i'm upset about not getting married.
+ >>> why do you feel the need to get married? 
+i'm upset about not having children.
+
+#### Expert Feedback:
+“This is close to a preliminary psychiatry session. It's not bad, especially if it is for casual call line therapy.”
+
+
+### additional error analysis:
+
+One thing we noticed is that the model performed a lot better when we tried to structure the questions we asked it to mimic the question structure of the questions asked by the therapist in the transcripts we trained the model on, like in this conversation:
+>>> hi, how are you?
+pretty good.
+>>> where are you from?
+mhm.
+>>> are you sad?
+yes.
+>>> what do you like to do?
+um i like to walk.
+>>> where do you work?
+mhm.
+>>> where do you work?
+uh in the office.
+>>> what did you study?
+business.
+>>> why are you sad?
+i don't know.
+>>> would you go to therapy?
+it would be too expensive.
+>>> what is the situation?
+uh just depressed.
+
+In this transcript, the chatbot was able to accurately answer the questions we asked it without us having to repeat the questions. This suggests that the model struggles to generalize beyond the training data, which makes sense given our difficulty in acquiring more transcripts. According to our expert, licensed therapists and psychiatrists will ask open ended questions, and if something like depression comes up they will follow up on the specific situation. It is difficult to gain information about “why” the chatbot is sad or “how” it lost its job. Because the therapist in our training data isn’t specific when asking questions, responses are more conversational and don’t allow for a lot of depth. Overall, the chatbot performed a little bit better than last week as it now can at the very least make small talk with a psychiatrist.
+
+
+### sketch of next action plan:
+We will start focusing on preparing our chatbot to be released to other psychologists as a part of our evaluation. To do this, we’ll first need to set up a website with a front end that psychiatrists can use to interact with the chatbot. As it stands, our model doesn’t generalize beyond the questions asked in the training data that well. We’re looking into ways to direct therapists to ask questions that more closely resemble the ones asked in the transcripts we trained on, to improve the quality of the responses the chatbot gives them. We will need to be very careful in how we go about doing this. We need to give therapists sufficient freedom to ask the questions they want to ask, as overly restricting the scope of questions therapists can ask limits the power of the chatbot as a training tool for therapists. Then we will design a survey for psychiatrists to fill out once they’ve interacted with the model to collect metrics to evaluate our model with and identify further places for exploration. This requires careful thinking about what type of metrics we will use (such as a point score for how depressed the chatbot sounds). In addition, we will spend some more time attempting to debug the memory error caused by training the model for more than 10 epochs. If we are able to train the model for more epochs, we expect the model’s performance to improve. 
+
+
 ## Blog Post 8:
 ### explanation of approach
 
