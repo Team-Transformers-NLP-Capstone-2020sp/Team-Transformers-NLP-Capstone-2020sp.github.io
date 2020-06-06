@@ -4,6 +4,7 @@ Brock Grassy, Dan Le, Kaushal Mangipudi
 
 ## Blog Post 10:
 Final Presentation video: https://youtu.be/VXhQ-d2ti7g
+
 Final Paper:
 
 ## Blog Post 9:
