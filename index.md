@@ -2,6 +2,11 @@
 
 Brock Grassy, Dan Le, Kaushal Mangipudi
 
+## Blog Post 10:
+Final Presentation video:
+
+Final Paper:
+
 ## Blog Post 9:
 
 ### advancing solution attempt #2
