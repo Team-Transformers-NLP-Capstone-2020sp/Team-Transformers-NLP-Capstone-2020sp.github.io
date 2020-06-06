@@ -5,7 +5,8 @@ Brock Grassy, Dan Le, Kaushal Mangipudi
 ## Blog Post 10:
 Final Presentation video: https://youtu.be/VXhQ-d2ti7g
 
-Final Paper:
+Final Paper: 
+Team-Transformers-NLP-Capstone-2020sp.github.io/Team_Transformers__Final_Report_CSE_481_N.pdf 
 
 ## Blog Post 9:
 
